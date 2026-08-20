@@ -751,6 +751,7 @@ class Component extends DCLogic {
   loop = () => {
     if (!this.mounted) return;
     this.raf = requestAnimationFrame(this.loop);
+    if (this.state.menu) return;   // the mark and fan sit fully behind the opaque nav overlay, so skip the heavy per-frame work while it's open
     if (this.hoverIdx < 0 && performance.now() - (this.lastInput || 0) > 1400) {
       this.spin += 0.0012;   // slow self-rotation while idle, hero included
     }
