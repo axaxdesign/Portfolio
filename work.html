@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Axel Bäckström</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F4F3F1; color:#0D0D0D;
+    font-family:"Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  a { color:#0D0D0D; text-decoration:none; }
+  a:hover { color:#0D0D0D; }
+  ::selection { background:#E30613; color:#F4F3F1; }
+  @keyframes axUp { from { opacity:0; transform:translateY(64px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes axTitleIn { from { opacity:0; transform:translateY(18px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+  @keyframes axCRise { from { transform:translateY(118%); } to { transform:translateY(0); } }
+  @keyframes axCLine { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; padding:clamp(18px, 2.4vw, 34px); box-sizing:border-box; overflow-x:hidden">
+
+  <div data-title="1" style="position: fixed; left: 27px; top: 84px; z-index: 2; font-size: clamp(64px, 11vw, 178px); font-weight: 700; letter-spacing: -0.055em; line-height: .82; text-transform: uppercase; color: #0D0D0D; max-width: 88vw; text-wrap: balance; pointer-events: none; transform-origin: 0% 50%; transition: opacity .5s cubic-bezier(.4,0,.6,1), transform 1.15s cubic-bezier(.16,.9,.2,1); animation: axTitleIn 1.3s cubic-bezier(.2,.7,.2,1) backwards">Work</div>
+
+  <div data-nav-bar="1" style="position:fixed; right:clamp(18px, 2.4vw, 34px); top:clamp(18px, 2.4vw, 34px); z-index:6; display:flex; align-items:center; gap:clamp(14px, 2vw, 26px)">
+    <a href="home.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">HOME</a>
+    <a data-active="1" href="work.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none">WORK</a>
+    <a href="about.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">ABOUT</a>
+    <a data-contact-open="1" href="#contact-sec" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">CONTACT</a>
+  
+    <div data-underline="1" style="position:absolute; left:0; bottom:0; height:3px; width:0; background:#E30613; opacity:0; pointer-events:none"></div>
+  </div>
+
+  <div data-contact="1" style="position:fixed; inset:0; z-index:4; display:none; opacity:0; transition:opacity .55s cubic-bezier(.2,.7,.2,1); background:transparent; backdrop-filter:blur(44px) saturate(1.08); -webkit-backdrop-filter:blur(44px) saturate(1.08)">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:clamp(18px, 2.6vw, 40px); padding:clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px) clamp(26px, 3.4vw, 52px); box-sizing:border-box">
+
+      <div data-cline="1" style="display:flex; justify-content:space-between; align-items:baseline; font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em">
+        <span>AXEL</span><span>BÄCKSTRÖM</span>
+      </div>
+
+      <div style="overflow:hidden; padding-left:7.6vw">
+        <div data-crise="1" style="font-size:min(17vw, 34vh, 300px); font-weight:700; letter-spacing:-0.055em; line-height:.82; text-transform:uppercase">Contact</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); padding-left:7.6vw; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+        <div data-cline="1">
+          <div>Work with me:</div>
+          <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+          <div style="color:#57544E">Freelance and full-time</div>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px; align-content:start">
+          <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+          <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px; align-content:start">
+          <a href="about.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">About</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-grid="1" style="position:relative; margin-top:clamp(200px, 26vw, 380px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:repeat(3, 1fr); gap:10vw 10.3vw; align-items:start">
+
+    <div data-item="1" style-hover="opacity:1" data-name="Våg" data-href="project-006.html" style="display:flex; flex-direction:column; position:relative; z-index:1; cursor:pointer; animation:axUp 1.4s 0.30s cubic-bezier(.2,.7,.2,1) backwards; grid-column:1; transition:filter .5s cubic-bezier(.2,.7,.2,1), opacity .5s cubic-bezier(.2,.7,.2,1)">
+      <div data-img="1" style="width:100%; aspect-ratio:16/10; background:url(assets/vag.jpg) center/cover no-repeat"></div>
+      <div data-cap="1" style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>006</span><span>Våg</span></div>
+    </div>
+
+    <div data-item="1" style-hover="opacity:1" data-name="Triangularity" data-href="project-005.html" style="display:flex; flex-direction:column; position:relative; z-index:1; cursor:pointer; animation:axUp 1.4s 0.46s cubic-bezier(.2,.7,.2,1) backwards; grid-column:2; transition:filter .5s cubic-bezier(.2,.7,.2,1), opacity .5s cubic-bezier(.2,.7,.2,1)">
+      <div data-img="2" style="width:100%; aspect-ratio:3/4; background:url(assets/triangularity.jpg) center/cover no-repeat"></div>
+      <div data-cap="1" style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>005</span><span>Triangularity</span></div>
+    </div>
+
+    <div data-item="1" style-hover="opacity:1" data-name="Zamklapf" data-href="project-004.html" style="display:flex; flex-direction:column; position:relative; z-index:1; cursor:pointer; animation:axUp 1.4s 0.62s cubic-bezier(.2,.7,.2,1) backwards; grid-column:3; transition:filter .5s cubic-bezier(.2,.7,.2,1), opacity .5s cubic-bezier(.2,.7,.2,1)">
+      <div data-img="3" style="width:100%; aspect-ratio:1/1; background:url(assets/zamklapf.jpg) center/cover no-repeat"></div>
+      <div data-cap="1" style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>004</span><span>Zamklapf</span></div>
+    </div>
+
+    <div data-item="1" style-hover="opacity:1" data-name="Hörntalare" data-href="project-003.html" style="display:flex; flex-direction:column; position:relative; z-index:1; cursor:pointer; animation:axUp 1.4s 0.78s cubic-bezier(.2,.7,.2,1) backwards; grid-column:1; transition:filter .5s cubic-bezier(.2,.7,.2,1), opacity .5s cubic-bezier(.2,.7,.2,1)">
+      <div data-img="4" style="width:100%; aspect-ratio:16/9; background-image:url(assets/horntalare.jpg); background-repeat:no-repeat; background-size:120% auto; background-position:80% 52%"></div>
+      <div data-cap="1" style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>003</span><span>Hörntalare</span></div>
+    </div>
+
+    <div data-item="1" style-hover="opacity:1" data-name="Fläkt" data-href="project-002.html" style="display:flex; flex-direction:column; position:relative; z-index:1; cursor:pointer; animation:axUp 1.4s 0.94s cubic-bezier(.2,.7,.2,1) backwards; grid-column:2; transition:filter .5s cubic-bezier(.2,.7,.2,1), opacity .5s cubic-bezier(.2,.7,.2,1)">
+      <div data-img="5" style="width:100%; aspect-ratio:4/5; background:url(assets/flakt.jpg) center/cover no-repeat"></div>
+      <div data-cap="1" style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>002</span><span>Fläkt</span></div>
+    </div>
+
+    <div data-item="1" style-hover="opacity:1" data-name="bås" data-href="project-001.html" style="display:flex; flex-direction:column; position:relative; z-index:1; cursor:pointer; animation:axUp 1.4s 1.10s cubic-bezier(.2,.7,.2,1) backwards; grid-column:3; transition:filter .5s cubic-bezier(.2,.7,.2,1), opacity .5s cubic-bezier(.2,.7,.2,1)">
+      <div data-img="6" style="width:100%; aspect-ratio:3/2; background:url(assets/bas.jpg) center/cover no-repeat"></div>
+      <div data-cap="1" style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>001</span><span>bås</span></div>
+    </div>
+
+  </div>
+
+  <div style="position:relative; z-index:1; display:flex; justify-content:space-between; gap:clamp(24px, 6vw, 90px); margin-top:clamp(120px, 18vw, 260px); font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8880">
+    <div id="about-sec" style="display:flex; flex-direction:column; gap:5px">
+      <div style="color:#0D0D0D">Product &amp; furniture design</div>
+      <div>Stockholm — selected work 2019—26</div>
+    </div>
+    <div id="contact-sec" style="display:flex; flex-direction:column; gap:5px; text-align:right">
+      <a href="mailto:axelbackstrumm@gmail.com">axelbackstrumm@gmail.com</a>
+      <div>Instagram — LinkedIn</div>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(90px, 14vw, 220px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+    <div>
+      <div>Work with me:</div>
+      <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+      <div style="color:#57544E">Freelance and full-time</div>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+      <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="about.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">About</a>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(40px, 6vw, 90px); padding:0 1.6vw; font-size:11.15vw; font-weight:700; letter-spacing:-0.055em; line-height:.86; white-space:nowrap; text-align:center; display:flex; justify-content:center">AXEL BÄCKSTRÖM</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;ratio1&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;1:1&quot;,&quot;3:2&quot;,&quot;16:10&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;Original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;001 Zamklapf&quot;},&quot;focusX1&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;001 Zamklapf&quot;},&quot;focusY1&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;001 Zamklapf&quot;},&quot;ratio2&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;1:1&quot;,&quot;3:2&quot;,&quot;16:10&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;Original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;002 Hörntalare&quot;},&quot;focusX2&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:63,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;002 Hörntalare&quot;},&quot;focusY2&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:47,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;002 Hörntalare&quot;},&quot;ratio3&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;1:1&quot;,&quot;3:2&quot;,&quot;16:10&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;Original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;003 Fläkt&quot;},&quot;focusX3&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;003 Fläkt&quot;},&quot;focusY3&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;003 Fläkt&quot;},&quot;ratio4&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;1:1&quot;,&quot;3:2&quot;,&quot;16:10&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;3:4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;004 Triangularity&quot;},&quot;focusX4&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:80,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;004 Triangularity&quot;},&quot;focusY4&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:52,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;004 Triangularity&quot;},&quot;ratio5&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;1:1&quot;,&quot;3:2&quot;,&quot;16:10&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;Original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;005 bås&quot;},&quot;focusX5&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;005 bås&quot;},&quot;focusY5&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;005 bås&quot;},&quot;ratio6&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Original&quot;,&quot;4:5&quot;,&quot;3:4&quot;,&quot;1:1&quot;,&quot;3:2&quot;,&quot;16:10&quot;,&quot;16:9&quot;],&quot;default&quot;:&quot;Original&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;006 Våg&quot;},&quot;focusX6&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;006 Våg&quot;},&quot;focusY6&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:50,&quot;min&quot;:0,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;006 Våg&quot;},&quot;blurAmount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:12,&quot;min&quot;:0,&quot;max&quot;:30,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hover&quot;},&quot;dimOthers&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0.2,&quot;max&quot;:1,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hover&quot;},&quot;nameOffsetY&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:44,&quot;min&quot;:-160,&quot;max&quot;:400,&quot;step&quot;:4,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Project name&quot;},&quot;nameGrow&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.09,&quot;min&quot;:1,&quot;max&quot;:1.3,&quot;step&quot;:0.01,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Project name&quot;}}">
+class Component extends DCLogic {
+
+  // one underline for the whole nav: it slides to whatever you hover and
+  // returns to the current page's item on leave, so two bars never show at once
+  // CONTACT opens a blurred sheet over the page: the wordmark rises out of its own
+  // overflow box, the columns lift in after it
+  wireContact() {
+    const ov = document.querySelector("[data-contact]");
+    const link = document.querySelector("[data-contact-open]");
+    if (!ov || !link) return;
+    const rise = ov.querySelector("[data-crise]");
+    const lines = Array.from(ov.querySelectorAll("[data-cline]"));
+    const open = () => {
+      ov.style.display = "block";
+      void ov.offsetWidth;
+      ov.style.opacity = "1";
+      if (rise) { rise.style.animation = "none"; void rise.offsetWidth; rise.style.animation = "axCRise 1s cubic-bezier(.16,.9,.2,1) both"; }
+      lines.forEach((el, i) => {
+        el.style.animation = "none"; void el.offsetWidth;
+        el.style.animation = "axCLine .8s " + (0.18 + i * 0.07).toFixed(2) + "s cubic-bezier(.2,.7,.2,1) both";
+      });
+      this._cOpen = true;
+    };
+    const close = () => {
+      ov.style.opacity = "0";
+      this._cOpen = false;
+      setTimeout(() => { if (!this._cOpen) ov.style.display = "none"; }, 560);
+    };
+    link.addEventListener("click", e => { e.preventDefault(); this._cOpen ? close() : open(); });
+    ov.addEventListener("click", e => { if (e.target === ov || e.target === ov.firstElementChild) close(); });
+    window.addEventListener("keydown", e => { if (e.key === "Escape" && this._cOpen) close(); });
+  }
+
+  wireUnderline() {
+    const nav = document.querySelector("[data-nav-bar]");
+    if (!nav) return;
+    const links = Array.from(nav.querySelectorAll("a"));
+    const bar = nav.querySelector("[data-underline]");
+    if (!links.length || !bar) return;
+    const home = links.find(a => a.hasAttribute("data-active")) || null;
+    const move = (el, instant) => {
+      bar.style.transition = instant ? "none" : "transform .42s cubic-bezier(.2,.7,.2,1), width .42s cubic-bezier(.2,.7,.2,1), opacity .25s linear";
+      if (!el) { bar.style.opacity = "0"; return; }
+      const nr = nav.getBoundingClientRect(), r = el.getBoundingClientRect();
+      bar.style.opacity = "1";
+      bar.style.width = Math.round(r.width) + "px";
+      bar.style.transform = "translateX(" + Math.round(r.left - nr.left) + "px)";
+    };
+    links.forEach(a => {
+      a.addEventListener("pointerenter", () => move(a));
+      a.addEventListener("focus", () => move(a));
+    });
+    nav.addEventListener("pointerleave", () => move(home));
+    requestAnimationFrame(() => move(home, true));
+    window.addEventListener("resize", () => move(home, true));
+  }
+
+  componentDidMount() {
+    this.wireContact();
+    setTimeout(() => this.wireUnderline(), 0);
+    this.mounted = true;
+    const wait = () => {
+      if (!this.mounted) return;
+      const title = document.querySelector("[data-title]");
+      const items = Array.from(document.querySelectorAll("[data-item]"));
+      if (!title || items.length < 2) return setTimeout(wait, 40);
+      this.titleEl = title;
+      this.items = items;
+      this.base = title.textContent;
+      items.forEach(el => {
+        el.addEventListener("pointerenter", () => this.focus(el));
+        el.addEventListener("pointerleave", () => this.focus(null));
+        el.addEventListener("click", () => { if (el.dataset.href) window.location.href = el.dataset.href; });
+      });
+      this.applyCrop();
+    };
+    setTimeout(wait, 0);
+  }
+
+  componentWillUnmount() { this.mounted = false; }
+
+  componentDidUpdate() { this.applyCrop(); }
+
+  applyCrop() {
+    const map = { "4:5":"4/5", "3:4":"3/4", "1:1":"1/1", "3:2":"3/2", "16:10":"16/10", "16:9":"16/9" };
+    document.querySelectorAll("[data-img]").forEach(im => {
+      const i = im.dataset.img;
+      if (!im.dataset.baseRatio) im.dataset.baseRatio = im.style.aspectRatio;
+      const r = this.props["ratio" + i] ?? "Original";
+      const x = this.props["focusX" + i] ?? 50;
+      const y = this.props["focusY" + i] ?? 50;
+      im.style.width = "100%";
+      im.style.height = "auto";
+      im.style.aspectRatio = map[r] || im.dataset.baseRatio;
+      im.style.backgroundPosition = x + "% " + y + "%";
+    });
+  }
+
+  focus(el) {
+    const blur = this.props.blurAmount ?? 12;
+    const dim = this.props.dimOthers ?? 1;
+    (this.items || []).forEach(it => {
+      const off = el && it !== el;
+      it.style.filter = off ? `blur(${blur}px)` : "none";
+      it.style.opacity = off ? String(dim) : "1";
+      it.style.zIndex = (el && it === el) ? "3" : "1";
+    });
+    this.swap(el ? el.dataset.name : this.base, !!el);
+  }
+
+  swap(text, isProject) {
+    const t = this.titleEl;
+    if (!t || t.textContent === text) return;
+    clearTimeout(this._t);
+    const dy = this.props.nameOffsetY ?? 0;
+    const grow = this.props.nameGrow ?? 1.06;
+    const live = "opacity .5s cubic-bezier(.4,0,.6,1), transform 1.15s cubic-bezier(.16,.9,.2,1)";
+    t.style.transition = "opacity .16s linear, transform .16s linear";
+    t.style.opacity = "0";
+    t.style.transform = isProject
+      ? `translateY(${dy}px) scale(1)`
+      : "translateY(0px) scale(1.02)";
+    this._t = setTimeout(() => {
+      if (!this.mounted) return;
+      t.textContent = text;
+      t.style.transition = "none";
+      t.style.transform = isProject
+        ? `translateY(${dy}px) scale(0.2)`
+        : "translateY(0px) scale(1)";
+      void t.offsetWidth;
+      t.style.transition = live;
+      t.style.opacity = "1";
+      t.style.transform = isProject
+        ? `translateY(${dy}px) scale(${grow})`
+        : "translateY(0px) scale(1)";
+    }, 180);
+  }
+}
+</script>
+</body>
+</html>

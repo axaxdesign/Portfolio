@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bås — Axel Bäckström</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700;900&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F4F3F1; color:#0D0D0D;
+    font-family:"Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  a { color:#0D0D0D; text-decoration:none; }
+  a:hover { color:#0D0D0D; }
+  ::selection { background:#E30613; color:#F4F3F1; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-delay:0ms !important; transition-duration:.01ms !important; } }
+  @keyframes axUp { from { opacity:0; transform:translateY(64px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes axTitleIn { from { opacity:0; transform:translateY(18px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+  @keyframes axCRise { from { transform:translateY(118%); } to { transform:translateY(0); } }
+  @keyframes axCLine { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; padding:clamp(18px, 2.4vw, 34px); box-sizing:border-box; overflow-x:hidden">
+
+  <div data-nav-bar="1" style="position:fixed; right:clamp(18px, 2.4vw, 34px); top:clamp(18px, 2.4vw, 34px); z-index:6; display:flex; align-items:center; gap:clamp(14px, 2vw, 26px)">
+    <a href="home.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">HOME</a>
+    <a data-active="1" href="work.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">WORK</a>
+    <a href="about.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">ABOUT</a>
+    <a data-contact-open="1" href="work.html#contact-sec" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">CONTACT</a>
+  
+    <div data-underline="1" style="position:absolute; left:0; bottom:0; height:3px; width:0; background:#E30613; opacity:0; pointer-events:none"></div>
+  </div>
+
+  <div data-sides="1" style="position:fixed; left:clamp(18px, 2.4vw, 34px); right:clamp(18px, 2.4vw, 34px); top:44vh; z-index:0; display:flex; justify-content:space-between; align-items:baseline; font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; pointer-events:none">
+    <span>AXEL</span><span style="color:#8C8880">&amp;</span><span>BÄCKSTRÖM</span>
+  </div>
+
+  <div data-contact="1" style="position:fixed; inset:0; z-index:4; display:none; opacity:0; transition:opacity .55s cubic-bezier(.2,.7,.2,1); background:transparent; backdrop-filter:blur(44px) saturate(1.08); -webkit-backdrop-filter:blur(44px) saturate(1.08)">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:clamp(18px, 2.6vw, 40px); padding:clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px) clamp(26px, 3.4vw, 52px); box-sizing:border-box">
+
+      <div data-cline="1" style="display:flex; justify-content:space-between; align-items:baseline; font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em">
+        <span>AXEL</span><span>BÄCKSTRÖM</span>
+      </div>
+
+      <div style="overflow:hidden; padding-left:7.6vw">
+        <div data-crise="1" style="font-size:min(17vw, 34vh, 300px); font-weight:700; letter-spacing:-0.055em; line-height:.82; text-transform:uppercase">Contact</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); padding-left:7.6vw; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+        <div data-cline="1">
+          <div>Work with me:</div>
+          <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+          <div style="color:#57544E">Freelance and full-time</div>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px; align-content:start">
+          <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+          <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px; align-content:start">
+          <a href="about.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">About</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-ptitle="1" style="position:fixed; left:clamp(18px, 2.4vw, 34px); top:calc(clamp(18px, 2.4vw, 34px) + clamp(15px, 1.5vw, 21px) * 1.3 + var(--ttop, 26px)); z-index:0; pointer-events:none; font-size:min(11.6vw, 178px); font-weight:700; letter-spacing:-0.055em; line-height:.95; text-transform:uppercase; color:#0D0D0D; max-width:88vw; text-wrap:balance; animation:axTitleIn 1.3s cubic-bezier(.2,.7,.2,1) backwards">bås</div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(240px, 30vw, 420px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:repeat(6, 1fr); gap:0 5.2vw; align-items:start">
+
+      <div style="grid-column:1 / span 2; animation:axUp 1.3s 0.30s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8880; margin-bottom:14px">Spatial</div>
+        <div style="font-size:clamp(34px, 4.4vw, 68px); font-weight:700; letter-spacing:-0.045em; line-height:.92">bås</div>
+        <div style="margin-top:20px; max-width:30ch; font-size:15px; font-weight:700; line-height:1.45; text-wrap:pretty">A reconfigurable reading booth for libraries, a sound-insulated place for concentration, collaboration and rest in one unit.</div>
+        <div style="margin-top:clamp(30px, 4vw, 54px); max-width:34ch; animation:axUp 1.3s 0.36s cubic-bezier(.2,.7,.2,1) backwards">
+          <div style="border-top:1px solid #0D0D0D">
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Year</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Autumn 2023</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Role</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Concept, CAD, prototyping</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Materials</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Oak, powder-coated aluminium, cork</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Dimensions</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">2400 × 2400 × 1800 mm</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Status</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Concept, not produced</span>
+          </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div data-slot="1" style="grid-column:4 / span 3; grid-row:1; animation:axUp 1.3s 0.38s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/F1</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Film</span></div>
+        <div style="position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; background:#0D0D0D">
+          <video data-clip="1" src="assets/bas-trim-1.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:auto; height:124%; min-width:100%; object-fit:cover"></video>
+        </div>
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 6; margin-top:clamp(40px, 6vw, 90px); animation:axUp 1.3s 0.44s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/01</span><span style="font-weight:400; color:#57544E; letter-spacing:0">On the open-plan floor, workstation</span></div>
+        <img data-img="1" src="assets/bas.jpg" alt="Booth on the open-plan floor" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 4; margin-top:clamp(50px, 7vw, 110px); animation:axUp 1.3s 0.56s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/02</span><span style="font-weight:400; color:#57544E; letter-spacing:0">co-working/meeting room configuration</span></div>
+        <img data-img="1" src="assets/bas-02.jpg" alt="Interior of the booth" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:5 / span 2; margin-top:clamp(130px, 17vw, 260px); animation:axUp 1.3s 0.62s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/03</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Wheels for easy reconfiguration</span></div>
+        <img data-img="1" src="assets/bas-03.jpg" alt="Curved wall running on a caster" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:2 / span 5; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 0.68s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/F2</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Film</span></div>
+        <div style="position:relative; width:100%; aspect-ratio:1920/700; overflow:hidden; background:#0D0D0D">
+          <video data-clip="1" src="assets/bas-trim-2.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:auto; height:124%; min-width:100%; object-fit:cover"></video>
+        </div>
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 3; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 0.80s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/04</span><span style="font-weight:400; color:#57544E; letter-spacing:0">reading booth</span></div>
+        <img data-img="1" src="assets/bas-04.jpg" alt="Door and seat" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:4 / span 3; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 0.86s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/05</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Workstation, Orange glass</span></div>
+        <img data-img="1" src="assets/bas-05.jpg" alt="Booth seen from above" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      
+
+      <div data-slot="1" style="grid-column:3 / span 4; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 1.04s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/F3</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Film</span></div>
+        <div style="position:relative; width:100%; aspect-ratio:1920/981; overflow:hidden; background:#0D0D0D">
+          <video data-clip="1" src="assets/bas-trim-3.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="metadata" style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); width:auto; height:124%; min-width:100%; object-fit:cover"></video>
+        </div>
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 6; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 0.98s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>001/06</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Interior, reading light, headphones &amp; media player</span></div>
+        <img data-img="1" src="assets/bas-06.jpg" alt="Two booths side by side" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:55vh; padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:1fr 1fr 1fr; gap:10.3vw; align-items:start">
+
+    <div style="position:relative; aspect-ratio:1/1; width:100%">
+      <div data-thumb="prev" style="position:absolute; inset:0; background:url(assets/vag.jpg) center/cover no-repeat; opacity:0; transform:scale(.82); transform-origin:0% 0%; transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.16,.9,.2,1); pointer-events:none"></div>
+      <div data-thumb="next" style="position:absolute; inset:0; background:url(assets/flakt.jpg) center/cover no-repeat; opacity:0; transform:scale(.82); transform-origin:0% 0%; transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.16,.9,.2,1); pointer-events:none"></div>
+    </div>
+
+    <a data-navlink="prev" href="project-006.html" style="display:block">
+      <div style="font-size:clamp(34px, 4.4vw, 68px); font-weight:700; letter-spacing:-0.045em; line-height:.92">prev<br>project</div>
+      <div data-navcap="1" style="margin-top:16px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase; text-decoration-thickness:2px; text-underline-offset:4px">006 Våg</div>
+    </a>
+    <a data-navlink="next" href="project-002.html" style="display:block">
+      <div style="font-size:clamp(34px, 4.4vw, 68px); font-weight:700; letter-spacing:-0.045em; line-height:.92">next<br>project</div>
+      <div data-navcap="1" style="margin-top:16px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase; text-decoration-thickness:2px; text-underline-offset:4px">002 Fläkt</div>
+    </a>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(90px, 14vw, 220px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+    <div>
+      <div>Work with me:</div>
+      <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+      <div style="color:#57544E">Freelance and full-time</div>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+      <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="about.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">About</a>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(40px, 6vw, 90px); padding:0 1.6vw; font-size:11.15vw; font-weight:700; letter-spacing:-0.055em; line-height:.86; white-space:nowrap; text-align:center; display:flex; justify-content:center" data-wordmark="1" ref="{{ wordmarkRef }}">AXEL BÄCKSTRÖM</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;imageScale&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:100,&quot;min&quot;:50,&quot;max&quot;:100,&quot;step&quot;:1,&quot;unit&quot;:&quot;%&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;sideLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;wordmarkSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:10.65,&quot;min&quot;:6,&quot;max&quot;:14,&quot;step&quot;:0.05,&quot;unit&quot;:&quot;vw&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;titleTop&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:26,&quot;min&quot;:0,&quot;max&quot;:200,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  nudgeClip() {
+    const vs = Array.prototype.slice.call(document.querySelectorAll("[data-clip]"));
+    vs.forEach(function (v) {
+      if (v.dataset.wired) return;
+      v.dataset.wired = "1";
+      v.muted = true;
+      v.loop = true;
+      v.setAttribute("playsinline", "");
+      const go = function () { const r = v.play(); if (r && r.catch) r.catch(function (e) { console.debug("clip autoplay blocked:", e && e.name); }); };
+      v.addEventListener("pause", function () { if (!v.ended && !document.hidden) go(); });
+      v.addEventListener("loadeddata", go);
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) go(); });
+      go();
+    });
+  }
+
+  componentDidMount() {
+    this.nudgeClip(); this.apply(); this.titleRig(); this.wire(); this.wireUnderline(); this.wireContact(); }
+
+
+  // one underline for the whole nav: it slides to whatever you hover and
+  // returns to the current page's item on leave, so two bars never show at once
+  wireUnderline() {
+    const nav = document.querySelector("[data-nav-bar]");
+    if (!nav) return;
+    const links = Array.from(nav.querySelectorAll("a"));
+    const bar = nav.querySelector("[data-underline]");
+    if (!links.length || !bar) return;
+    const home = links.find(a => a.hasAttribute("data-active")) || null;
+    const move = (el, instant) => {
+      bar.style.transition = instant ? "none" : "transform .42s cubic-bezier(.2,.7,.2,1), width .42s cubic-bezier(.2,.7,.2,1), opacity .25s linear";
+      if (!el) { bar.style.opacity = "0"; return; }
+      const nr = nav.getBoundingClientRect(), r = el.getBoundingClientRect();
+      bar.style.opacity = "1";
+      bar.style.width = Math.round(r.width) + "px";
+      bar.style.transform = "translateX(" + Math.round(r.left - nr.left) + "px)";
+    };
+    links.forEach(a => {
+      a.addEventListener("pointerenter", () => move(a));
+      a.addEventListener("focus", () => move(a));
+    });
+    nav.addEventListener("pointerleave", () => move(home));
+    requestAnimationFrame(() => move(home, true));
+    window.addEventListener("resize", () => move(home, true));
+  }
+
+  sizeWordmark() {
+    const w = document.querySelector("[data-wordmark]");
+    if (w) w.style.setProperty("font-size", (this.props.wordmarkSize ?? 11.15) + "vw", "important");
+  }
+
+  renderVals() {
+    const size = (this.props.wordmarkSize ?? 11.15) + "vw";
+    return { wordmarkRef: (el) => { if (el) el.style.setProperty("font-size", size, "important"); } };
+  }
+
+  wordmarkRef = (el) => {
+    if (el) el.style.setProperty("font-size", (this.props.wordmarkSize ?? 11.15) + "vw", "important");
+  };
+
+
+  componentDidUpdate() { this.apply(); this.titleRig(); this.nudgeClip(); }
+  // The title sits below the nav row via a pure-CSS offset (nothing shifts when the
+  // webfont lands) and parks above the last image instead of scrolling past the nav.
+  // The title sits below the nav row via a pure-CSS offset, parks above the last image,
+  // and is masked at the nav line on the way out. All geometry is measured from live
+  // rects, so it works whichever element actually scrolls (host container or document).
+  titleRig() {
+    const t = document.querySelector("[data-ptitle]");
+    if (!t) return;
+    if (!this._baseTop) this._baseTop = t.style.top;
+    t.style.setProperty("--ttop", (this.props.titleTop ?? 26) + "px");
+    if (this._rigged) { this._park(); return; }
+    this._rigged = true;
+    const slots = document.querySelectorAll("[data-slot]");
+    const last = slots[slots.length - 1];
+    const nav = document.querySelector("[data-nav-bar]");
+    this._park = () => {
+      if (!last) return;
+      t.style.position = "fixed";
+      t.style.top = this._baseTop;
+      t.style.clipPath = "none";
+      const parent = t.offsetParent || document.body;
+      const pr = parent.getBoundingClientRect();
+      const fixedTop = t.getBoundingClientRect().top;
+      const limit = last.getBoundingClientRect().bottom - pr.top - t.offsetHeight;
+      if (fixedTop - pr.top > limit) {
+        t.style.position = "absolute";
+        t.style.top = Math.max(0, limit) + "px";
+      }
+      const cut = (nav ? nav.getBoundingClientRect().bottom : 48) + 8;
+      const boxTop = t.getBoundingClientRect().top;
+      if (boxTop < cut) t.style.clipPath = "inset(" + Math.ceil(cut - boxTop) + "px 0 0 0)";
+    };
+    this._park();
+    window.addEventListener("scroll", this._park, { passive: true, capture: true });
+    window.addEventListener("resize", this._park);
+  }
+
+  // CONTACT opens a blurred sheet over the page: the wordmark rises out of its own
+  // overflow box, the columns lift in after it
+  wireContact() {
+    const ov = document.querySelector("[data-contact]");
+    const link = document.querySelector("[data-contact-open]");
+    if (!ov || !link) return;
+    const rise = ov.querySelector("[data-crise]");
+    const lines = Array.from(ov.querySelectorAll("[data-cline]"));
+    const open = () => {
+      ov.style.display = "block";
+      void ov.offsetWidth;
+      ov.style.opacity = "1";
+      if (rise) { rise.style.animation = "none"; void rise.offsetWidth; rise.style.animation = "axCRise 1s cubic-bezier(.16,.9,.2,1) both"; }
+      lines.forEach((el, i) => {
+        el.style.animation = "none"; void el.offsetWidth;
+        el.style.animation = "axCLine .8s " + (0.18 + i * 0.07).toFixed(2) + "s cubic-bezier(.2,.7,.2,1) both";
+      });
+      this._cOpen = true;
+    };
+    const close = () => {
+      ov.style.opacity = "0";
+      this._cOpen = false;
+      setTimeout(() => { if (!this._cOpen) ov.style.display = "none"; }, 560);
+    };
+    link.addEventListener("click", e => { e.preventDefault(); this._cOpen ? close() : open(); });
+    ov.addEventListener("click", e => { if (e.target === ov || e.target === ov.firstElementChild) close(); });
+    window.addEventListener("keydown", e => { if (e.key === "Escape" && this._cOpen) close(); });
+  }
+
+  wire() {
+    document.querySelectorAll("[data-navlink]").forEach(a => {
+      const k = a.dataset.navlink;
+      const cap = a.querySelector("[data-navcap]");
+      a.addEventListener("pointerenter", () => {
+        const t = document.querySelector('[data-thumb="' + k + '"]');
+        if (t) { t.style.opacity = "1"; t.style.transform = "scale(1)"; }
+        if (cap) cap.style.textDecoration = "underline";
+      });
+      a.addEventListener("pointerleave", () => {
+        const t = document.querySelector('[data-thumb="' + k + '"]');
+        if (t) { t.style.opacity = "0"; t.style.transform = "scale(.82)"; }
+        if (cap) cap.style.textDecoration = "none";
+      });
+    });
+  }
+  apply() {
+    const w = (this.props.imageScale ?? 100) + "%";
+    document.querySelectorAll("[data-img]").forEach(im => { im.style.width = w; });
+    const sides = document.querySelector("[data-sides]");
+    if (sides) sides.style.display = (this.props.sideLabels ?? false) ? "flex" : "none";
+  }
+}
+</script>
+</body>
+</html>

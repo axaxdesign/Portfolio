@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triangularity — Axel Bäckström</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F4F3F1; color:#0D0D0D;
+    font-family:"Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  a { color:#0D0D0D; text-decoration:none; }
+  a:hover { color:#0D0D0D; }
+  ::selection { background:#E30613; color:#F4F3F1; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-delay:0ms !important; transition-duration:.01ms !important; } }
+  @keyframes axUp { from { opacity:0; transform:translateY(64px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes axTitleIn { from { opacity:0; transform:translateY(18px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+  @keyframes axCRise { from { transform:translateY(118%); } to { transform:translateY(0); } }
+  @keyframes axCLine { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; padding:clamp(18px, 2.4vw, 34px); box-sizing:border-box; overflow-x:hidden">
+
+  <div data-nav-bar="1" style="position:fixed; right:clamp(18px, 2.4vw, 34px); top:clamp(18px, 2.4vw, 34px); z-index:6; display:flex; align-items:center; gap:clamp(14px, 2vw, 26px)">
+    <a href="home.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">HOME</a>
+    <a data-active="1" href="work.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">WORK</a>
+    <a href="about.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">ABOUT</a>
+    <a data-contact-open="1" href="work.html#contact-sec" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; border-bottom:none; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">CONTACT</a>
+  
+    <div data-underline="1" style="position:absolute; left:0; bottom:0; height:3px; width:0; background:#E30613; opacity:0; pointer-events:none"></div>
+  </div>
+
+  <div data-sides="1" style="position:fixed; left:clamp(18px, 2.4vw, 34px); right:clamp(18px, 2.4vw, 34px); top:44vh; z-index:0; display:flex; justify-content:space-between; align-items:baseline; font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; pointer-events:none">
+    <span>AXEL</span><span style="color:#8C8880">&amp;</span><span>BÄCKSTRÖM</span>
+  </div>
+
+  <div data-contact="1" style="position:fixed; inset:0; z-index:4; display:none; opacity:0; transition:opacity .55s cubic-bezier(.2,.7,.2,1); background:transparent; backdrop-filter:blur(44px) saturate(1.08); -webkit-backdrop-filter:blur(44px) saturate(1.08)">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:clamp(18px, 2.6vw, 40px); padding:clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px) clamp(26px, 3.4vw, 52px); box-sizing:border-box">
+
+      <div data-cline="1" style="display:flex; justify-content:space-between; align-items:baseline; font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em">
+        <span>AXEL</span><span>BÄCKSTRÖM</span>
+      </div>
+
+      <div style="overflow:hidden; padding-left:7.6vw">
+        <div data-crise="1" style="font-size:min(17vw, 34vh, 300px); font-weight:700; letter-spacing:-0.055em; line-height:.82; text-transform:uppercase">Contact</div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); padding-left:7.6vw; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+        <div data-cline="1">
+          <div>Work with me:</div>
+          <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+          <div style="color:#57544E">Freelance and full-time</div>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px">
+          <a href="#" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+          <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px">
+          <a href="about.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">About</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div data-ptitle="1" style="position:fixed; left:clamp(18px, 2.4vw, 34px); top:calc(clamp(18px, 2.4vw, 34px) + clamp(15px, 1.5vw, 21px) * 1.3 + var(--ttop, 26px)); z-index:0; pointer-events:none; font-size:min(11.6vw, 178px); font-weight:700; letter-spacing:-0.055em; line-height:.95; text-transform:uppercase; color:#0D0D0D; max-width:88vw; text-wrap:balance; animation:axTitleIn 1.3s cubic-bezier(.2,.7,.2,1) backwards">Triangularity</div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(240px, 30vw, 420px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:repeat(6, 1fr); gap:0 5.2vw; align-items:start">
+
+      <div style="grid-column:5 / span 2; animation:axUp 1.3s 0.30s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8880; margin-bottom:14px">Furniture</div>
+        <div style="font-size:clamp(34px, 4.4vw, 68px); font-weight:700; letter-spacing:-0.045em; line-height:.92">Triangularity</div>
+        <div style="margin-top:20px; max-width:30ch; font-size:15px; font-weight:700; line-height:1.45; text-wrap:pretty">Triangularity is a bent steel tube bar chair that plays with openness and a light visual presence.</div>
+        <div style="margin-top:clamp(30px, 4vw, 54px); max-width:34ch; animation:axUp 1.3s 0.36s cubic-bezier(.2,.7,.2,1) backwards">
+          <div style="border-top:1px solid #0D0D0D">
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Year</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Autumn 2025</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Role</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Concept, CAD, prototyping</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Materials</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Bent steel tube, birch plywood</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Dimensions</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Seat height 1100 mm, seat 450 mm wide</span>
+          </div>
+          <div style="display:grid; grid-template-columns:92px 1fr; align-items:baseline; gap:18px; padding:9px 0; border-bottom:1px solid #D6D3CD">
+            <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#57544E">Status</span>
+            <span style="font-size:13px; font-weight:700; letter-spacing:-0.01em; text-wrap:pretty">Working prototype</span>
+          </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 4; grid-row:1; animation:axUp 1.3s 0.44s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>005/01</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Three-quarter view</span></div>
+        <img data-img="1" src="assets/triangularity.jpg" alt="Bar chair seen three-quarter" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:5 / span 2; margin-top:clamp(40px, 6vw, 90px); animation:axUp 1.3s 0.56s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>005/02</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Plywood seat and tube, detail</span></div>
+        <img data-img="1" src="assets/tri-02.jpg" alt="Birch plywood seat where it meets the tube" style="display:block; width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 4; margin-top:clamp(40px, 6vw, 90px); animation:axUp 1.3s 0.68s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>005/03</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Front elevation</span></div>
+        <img data-img="1" src="assets/tri-04.jpg" alt="Bar chair straight on" style="display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:center; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:3 / span 4; grid-row:4; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 0.80s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>005/04</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Seat corner, detail</span></div>
+        <img data-img="1" src="assets/tri-05.jpg" alt="Corner of the seat against the bent tube" style="display:block; width:100%; height:auto; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+      <div data-slot="1" style="grid-column:1 / span 2; grid-row:4; align-self:end; display:flex; flex-direction:column; margin-top:clamp(60px, 8vw, 130px); animation:axUp 1.3s 0.92s cubic-bezier(.2,.7,.2,1) backwards">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.02em; margin-bottom:10px; display:flex; gap:10px; align-items:baseline"><span>005/05</span><span style="font-weight:400; color:#57544E; letter-spacing:0">Full height, from the front</span></div>
+        <img data-img="1" src="assets/tri-06.jpg" alt="Bar chair standing at full height" style="display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center; background:repeating-linear-gradient(135deg, #E4E1DC 0 14px, #F4F3F1 14px 28px)">
+      </div>
+
+  </div>
+
+  <div data-navrow="1" style="position:relative; z-index:1; margin-top:55vh; padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:1fr 1fr 1fr; gap:10.3vw; align-items:start">
+
+    <div style="position:relative; aspect-ratio:1/1; width:100%">
+      <div data-thumb="prev" style="position:absolute; inset:0; background:url(assets/zamklapf.jpg) center/cover no-repeat; opacity:0; transform:scale(.82); transform-origin:0% 0%; transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.16,.9,.2,1); pointer-events:none"></div>
+      <div data-thumb="next" style="position:absolute; inset:0; background:url(assets/vag.jpg) center/cover no-repeat; opacity:0; transform:scale(.82); transform-origin:0% 0%; transition:opacity .5s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.16,.9,.2,1); pointer-events:none"></div>
+    </div>
+
+    <a data-navlink="prev" href="project-004.html" style="display:block">
+      <div style="font-size:clamp(34px, 4.4vw, 68px); font-weight:700; letter-spacing:-0.045em; line-height:.92">prev<br>project</div>
+      <div data-navcap="1" style="margin-top:16px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase; text-decoration-thickness:2px; text-underline-offset:4px">004 Zamklapf</div>
+    </a>
+    <a data-navlink="next" href="project-006.html" style="display:block">
+      <div style="font-size:clamp(34px, 4.4vw, 68px); font-weight:700; letter-spacing:-0.045em; line-height:.92">next<br>project</div>
+      <div data-navcap="1" style="margin-top:16px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase; text-decoration-thickness:2px; text-underline-offset:4px">006 Våg</div>
+    </a>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(90px, 14vw, 220px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+    <div>
+      <div>Work with me:</div>
+      <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+      <div style="color:#57544E">Freelance and full-time</div>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="#" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+      <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="about.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">About</a>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(40px, 6vw, 90px); padding:0 1.6vw; font-size:11.15vw; font-weight:700; letter-spacing:-0.055em; line-height:.86; white-space:nowrap; text-align:center; display:flex; justify-content:center">AXEL BÄCKSTRÖM</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"imageScale":{"editor":"range","default":100,"min":50,"max":100,"step":1,"unit":"%","tsType":"number","section":"Layout"},"sideLabels":{"editor":"boolean","default":false,"tsType":"boolean","section":"Layout"},"titleTop":{"editor":"range","default":26,"min":0,"max":200,"step":2,"unit":"px","tsType":"number","section":"Layout"}}'>
+class Component extends DCLogic {
+  componentDidMount() { this.apply(); this.titleRig(); this.wire(); this.wireUnderline(); this.wireContact(); }
+
+  // CONTACT opens a blurred sheet over the page: the wordmark rises out of its own
+  // overflow box, the columns lift in after it
+  wireContact() {
+    const ov = document.querySelector("[data-contact]");
+    const link = document.querySelector("[data-contact-open]");
+    if (!ov || !link) return;
+    const rise = ov.querySelector("[data-crise]");
+    const lines = Array.from(ov.querySelectorAll("[data-cline]"));
+    const tick = () => {
+      const now = new Intl.DateTimeFormat("sv-SE", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Stockholm" }).format(new Date());
+      document.querySelectorAll("[data-clock]").forEach(c => { c.textContent = now; });
+    };
+    tick(); setInterval(tick, 20000);
+
+    const open = () => {
+      ov.style.display = "block";
+      void ov.offsetWidth;
+      ov.style.opacity = "1";
+      if (rise) { rise.style.animation = "none"; void rise.offsetWidth; rise.style.animation = "axCRise 1s cubic-bezier(.16,.9,.2,1) both"; }
+      lines.forEach((el, i) => {
+        el.style.animation = "none"; void el.offsetWidth;
+        el.style.animation = "axCLine .8s " + (0.18 + i * 0.07).toFixed(2) + "s cubic-bezier(.2,.7,.2,1) both";
+      });
+      this._cOpen = true;
+    };
+    const close = () => {
+      ov.style.opacity = "0";
+      this._cOpen = false;
+      setTimeout(() => { if (!this._cOpen) ov.style.display = "none"; }, 560);
+    };
+    link.addEventListener("click", e => { e.preventDefault(); this._cOpen ? close() : open(); });
+    ov.addEventListener("click", e => { if (e.target === ov || e.target === ov.firstElementChild) close(); });
+    window.addEventListener("keydown", e => { if (e.key === "Escape" && this._cOpen) close(); });
+  }
+
+
+  // one underline for the whole nav: it slides to whatever you hover and
+  // returns to the current page's item on leave, so two bars never show at once
+  wireUnderline() {
+    const nav = document.querySelector("[data-nav-bar]");
+    if (!nav) return;
+    const links = Array.from(nav.querySelectorAll("a"));
+    const bar = nav.querySelector("[data-underline]");
+    if (!links.length || !bar) return;
+    const home = links.find(a => a.hasAttribute("data-active")) || null;
+    const move = (el, instant) => {
+      bar.style.transition = instant ? "none" : "transform .42s cubic-bezier(.2,.7,.2,1), width .42s cubic-bezier(.2,.7,.2,1), opacity .25s linear";
+      if (!el) { bar.style.opacity = "0"; return; }
+      const nr = nav.getBoundingClientRect(), r = el.getBoundingClientRect();
+      bar.style.opacity = "1";
+      bar.style.width = Math.round(r.width) + "px";
+      bar.style.transform = "translateX(" + Math.round(r.left - nr.left) + "px)";
+    };
+    links.forEach(a => {
+      a.addEventListener("pointerenter", () => move(a));
+      a.addEventListener("focus", () => move(a));
+    });
+    nav.addEventListener("pointerleave", () => move(home));
+    requestAnimationFrame(() => move(home, true));
+    window.addEventListener("resize", () => move(home, true));
+  }
+
+
+
+  componentDidUpdate() { this.apply(); this.titleRig(); }
+  // The title sits below the nav row via a pure-CSS offset (nothing shifts when the
+  // webfont lands) and parks above the last image instead of scrolling past the nav.
+  // The title sits below the nav row via a pure-CSS offset, parks above the last image,
+  // and is masked at the nav line on the way out. All geometry is measured from live
+  // rects, so it works whichever element actually scrolls (host container or document).
+  titleRig() {
+    const t = document.querySelector("[data-ptitle]");
+    if (!t) return;
+    if (!this._baseTop) this._baseTop = t.style.top;
+    t.style.setProperty("--ttop", (this.props.titleTop ?? 26) + "px");
+    if (this._rigged) { this._park(); return; }
+    this._rigged = true;
+    const slots = document.querySelectorAll("[data-slot]");
+    const last = slots[slots.length - 1];
+    const nav = document.querySelector("[data-nav-bar]");
+    this._park = () => {
+      if (!last) return;
+      t.style.position = "fixed";
+      t.style.top = this._baseTop;
+      t.style.clipPath = "none";
+      const parent = t.offsetParent || document.body;
+      const pr = parent.getBoundingClientRect();
+      const fixedTop = t.getBoundingClientRect().top;
+      const limit = last.getBoundingClientRect().bottom - pr.top - t.offsetHeight;
+      if (fixedTop - pr.top > limit) {
+        t.style.position = "absolute";
+        t.style.top = Math.max(0, limit) + "px";
+      }
+      const cut = (nav ? nav.getBoundingClientRect().bottom : 48) + 8;
+      const boxTop = t.getBoundingClientRect().top;
+      if (boxTop < cut) t.style.clipPath = "inset(" + Math.ceil(cut - boxTop) + "px 0 0 0)";
+    };
+    this._park();
+    window.addEventListener("scroll", this._park, { passive: true, capture: true });
+    window.addEventListener("resize", this._park);
+  }
+
+  wire() {
+    document.querySelectorAll("[data-navlink]").forEach(a => {
+      const k = a.dataset.navlink;
+      const cap = a.querySelector("[data-navcap]");
+      a.addEventListener("pointerenter", () => {
+        const t = document.querySelector('[data-thumb="' + k + '"]');
+        if (t) { t.style.opacity = "1"; t.style.transform = "scale(1)"; }
+        if (cap) cap.style.textDecoration = "underline";
+      });
+      a.addEventListener("pointerleave", () => {
+        const t = document.querySelector('[data-thumb="' + k + '"]');
+        if (t) { t.style.opacity = "0"; t.style.transform = "scale(.82)"; }
+        if (cap) cap.style.textDecoration = "none";
+      });
+    });
+  }
+  apply() {
+    const w = (this.props.imageScale ?? 100) + "%";
+    document.querySelectorAll("[data-img]").forEach(im => { im.style.width = w; });
+    const sides = document.querySelector("[data-sides]");
+    if (sides) sides.style.display = (this.props.sideLabels ?? false) ? "flex" : "none";
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Axel Bäckström</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;700;900&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#F4F3F1; color:#0D0D0D;
+    font-family:"Schibsted Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased; }
+  a { color:#0D0D0D; text-decoration:none; }
+  a:hover { color:#0D0D0D; }
+  ::selection { background:#E30613; color:#F4F3F1; }
+  @keyframes axUp { from { opacity:0; transform:translateY(64px); } to { opacity:1; transform:translateY(0); } }
+  @keyframes axTitleIn { from { opacity:0; transform:translateY(18px) scale(.96); } to { opacity:1; transform:translateY(0) scale(1); } }
+  @keyframes axCRise { from { transform:translateY(118%); } to { transform:translateY(0); } }
+  @keyframes axCLine { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+</style>
+</helmet>
+
+<div style="position:relative; min-height:100vh; padding:clamp(18px, 2.4vw, 34px); box-sizing:border-box; overflow-x:hidden">
+
+  <div style="position:fixed; left:clamp(18px, 2.4vw, 34px); top:clamp(70px, 7.4vw, 96px); z-index:0; font-size:clamp(64px, 11vw, 178px); font-weight:700; letter-spacing:-0.055em; line-height:.82; text-transform:uppercase; color:#0D0D0D; pointer-events:none; animation:axTitleIn 1.3s cubic-bezier(.2,.7,.2,1) backwards">About</div>
+
+  <div data-nav-bar="1" style="position:fixed; right:clamp(18px, 2.4vw, 34px); top:clamp(18px, 2.4vw, 34px); z-index:6; display:flex; align-items:center; gap:clamp(14px, 2vw, 26px)">
+    <a href="home.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">HOME</a>
+    <a href="work.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">WORK</a>
+    <a data-active="1" href="about.html" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px">ABOUT</a>
+    <a data-contact-open="1" href="#contact-sec" style="font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em; color:#0D0D0D; padding-bottom:7px; transition:color .3s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">CONTACT</a>
+    <div data-underline="1" style="position:absolute; left:0; bottom:0; height:3px; width:0; background:#E30613; opacity:0; pointer-events:none"></div>
+  </div>
+
+  <div data-contact="1" style="position:fixed; inset:0; z-index:4; display:none; opacity:0; transition:opacity .55s cubic-bezier(.2,.7,.2,1); background:transparent; backdrop-filter:blur(44px) saturate(1.08); -webkit-backdrop-filter:blur(44px) saturate(1.08)">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-end; gap:clamp(18px, 2.6vw, 40px); padding:clamp(18px, 2.4vw, 34px) clamp(18px, 2.4vw, 34px) clamp(26px, 3.4vw, 52px); box-sizing:border-box">
+      <div data-cline="1" style="display:flex; justify-content:space-between; align-items:baseline; font-size:clamp(15px, 1.5vw, 21px); font-weight:700; letter-spacing:-0.04em">
+        <span>AXEL</span><span>BÄCKSTRÖM</span>
+      </div>
+      <div style="overflow:hidden; padding-left:7.6vw">
+        <div data-crise="1" style="font-size:min(17vw, 34vh, 300px); font-weight:700; letter-spacing:-0.055em; line-height:.82; text-transform:uppercase">Contact</div>
+      </div>
+      <div style="display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); padding-left:7.6vw; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+        <div data-cline="1">
+          <div>Work with me:</div>
+          <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px; align-content:start">
+          <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+          <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+        </div>
+        <div data-cline="1" style="display:grid; justify-items:start; gap:2px; align-content:start">
+          <a href="work.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(190px, 25vw, 360px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr); gap:clamp(28px, 6vw, 90px); align-items:start">
+
+    <div style="animation:axUp 1.3s .26s cubic-bezier(.2,.7,.2,1) backwards">
+      <div style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8880; margin-bottom:clamp(14px, 1.6vw, 22px)">Statement</div>
+      <p style="margin:0; font-size:15px; font-weight:700; letter-spacing:-0.01em; line-height:1.45; max-width:46ch; text-wrap:pretty">Axel Bäckström is a product design student based in Gothenburg, Sweden. He is educated in Gothenburg (Sweden) and Weimar (Germany) and works within product design, spatial design and sound, with an interest in furniture and contemporary club culture.</p>
+      <div style="margin-top:clamp(24px, 3vw, 40px); font-size:15px; font-weight:700; letter-spacing:-0.01em; line-height:1.45">+ Contact: <a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+
+    </div>
+
+    <div data-portrait="1" style="display:flex; flex-direction:column; animation:axUp 1.3s .42s cubic-bezier(.2,.7,.2,1) backwards">
+      <div data-portrait-img="1" style="width:100%; aspect-ratio:3/4; background-color:#E7E5E1; background-image:url(assets/axel-portrait.jpg); background-size:cover; background-position:center 32%; transition:transform .6s cubic-bezier(.2,.7,.2,1)"></div>
+      <div style="display:flex; justify-content:space-between; gap:12px; margin-top:12px; font-size:12px; font-weight:700; letter-spacing:.02em; text-transform:uppercase"><span>Axel Bäckström</span></div>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(90px, 13vw, 200px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:clamp(28px, 4vw, 64px) clamp(20px, 3vw, 48px)">
+
+    <div>
+      <div style="border-bottom:2px solid #0D0D0D; padding-bottom:10px; margin-bottom:14px; font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase">Education</div>
+      <div style="display:grid; gap:16px">
+        <div>
+          <div style="font-size:15px; font-weight:700; letter-spacing:-0.03em; line-height:1.25">Bachelor’s Programme in Design</div>
+          <div style="font-size:13px; color:#57544E; line-height:1.45">HDK-Valand, Gothenburg</div>
+          <div style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.14em; color:#8C8880; margin-top:4px">2024 — 2027</div>
+        </div>
+        <div>
+          <div style="font-size:15px; font-weight:700; letter-spacing:-0.03em; line-height:1.25">Exchange Semester in Product Design</div>
+          <div style="font-size:13px; color:#57544E; line-height:1.45">Bauhaus-Universität Weimar</div>
+          <div style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.14em; color:#8C8880; margin-top:4px">Spring 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div style="border-bottom:2px solid #0D0D0D; padding-bottom:10px; margin-bottom:14px; font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase">Skills</div>
+      <div style="display:grid; gap:3px; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.5">
+        <div>CAD modeling</div>
+        <div>Technical drawing</div>
+        <div>Wood carpentry</div>
+        <div>Metal work</div>
+        <div>Concept development</div>
+        <div>Product design</div>
+        <div>Spatial design</div>
+        <div>Sound design</div>
+        <div>Music production</div>
+        <div>DJing</div>
+        <div>Audio mixing &amp; mastering</div>
+        <div>Video editing</div>
+        <div>Photography</div>
+      </div>
+    </div>
+
+    <div>
+      <div style="border-bottom:2px solid #0D0D0D; padding-bottom:10px; margin-bottom:14px; font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase">Software</div>
+      <div style="display:grid; gap:3px; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.5">
+        <div>Fusion 360</div>
+        <div>Adobe Photoshop</div>
+        <div>Adobe InDesign</div>
+        <div>Adobe Illustrator</div>
+        <div>Adobe Lightroom</div>
+        <div>Final Cut Pro</div>
+        <div>Ableton Live</div>
+      </div>
+      <div style="border-bottom:2px solid #0D0D0D; padding-bottom:10px; margin:26px 0 14px; font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase">Languages</div>
+      <div style="display:grid; gap:3px; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.5">
+        <div>Swedish <span style="color:#8C8880">— Native</span></div>
+        <div>English <span style="color:#8C8880">— Fluent</span></div>
+        <div>German <span style="color:#8C8880">— A1.2</span></div>
+      </div>
+    </div>
+
+    <div id="contact-sec">
+      <div style="border-bottom:2px solid #0D0D0D; padding-bottom:10px; margin-bottom:14px; font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase">Contact</div>
+      <div style="display:grid; justify-items:start; gap:3px; font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.5">
+        <a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a>
+        <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+        <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+        <div style="color:#8C8880; font-weight:400">Gothenburg, Sweden</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(70px, 10vw, 150px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px))">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid #0D0D0D; padding-bottom:10px; font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8C8880">
+      <span style="color:#0D0D0D">Experience</span><span>01</span>
+    </div>
+
+    <div data-row="1" style="display:grid; grid-template-columns:44px minmax(0,1.05fr) minmax(0,1.25fr) 150px; gap:clamp(12px, 2vw, 32px); align-items:baseline; padding:clamp(14px, 1.6vw, 22px) 0; border-bottom:1px solid #D6D3CE; transition:color .35s cubic-bezier(.2,.7,.2,1)" style-hover="color:#E30613">
+      <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.16em; color:#8C8880">01</span>
+      <span style="font-size:15px; font-weight:700; letter-spacing:-0.01em">IC031 / Inner Circle <span style="color:#8C8880">— Founder</span></span>
+      <span style="font-size:13px; font-weight:400; line-height:1.45; color:#57544E">Conceptual club experiences, event production, interior design and graphic design.</span>
+      <span style="font-family:ui-monospace, Menlo, monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap">Oct 2019 — present</span>
+    </div>
+
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(90px, 14vw, 220px); padding:0 calc(7.6vw - clamp(18px, 2.4vw, 34px)); display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:clamp(20px, 3vw, 48px); font-size:13px; font-weight:700; letter-spacing:-0.01em; line-height:1.6">
+    <div>
+      <div>Work with me:</div>
+      <div><a href="mailto:axelbackstrumm@gmail.com" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">axelbackstrumm@gmail.com</a></div>
+      <div style="color:#57544E">Freelance and full-time</div>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="https://www.instagram.com/axax.design/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Instagram</a>
+      <a href="https://www.linkedin.com/in/axel-b%C3%A4ckstr%C3%B6m-a5454124b/" target="_blank" rel="noopener" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">LinkedIn</a>
+    </div>
+    <div style="display:grid; justify-items:start; gap:2px; align-content:start">
+      <a href="work.html" style="text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px">Work</a>
+    </div>
+  </div>
+
+  <div style="position:relative; z-index:1; margin-top:clamp(40px, 6vw, 90px); padding:0 1.6vw; font-size:11.15vw; font-weight:700; letter-spacing:-0.055em; line-height:.86; white-space:nowrap; text-align:center; display:flex; justify-content:center">AXEL BÄCKSTRÖM</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;portraitRatio&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;3:4&quot;,&quot;4:5&quot;,&quot;1:1&quot;,&quot;16:10&quot;],&quot;default&quot;:&quot;1:1&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Portrait&quot;},&quot;portraitTilt&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0,&quot;min&quot;:-6,&quot;max&quot;:6,&quot;step&quot;:0.5,&quot;unit&quot;:&quot;deg&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Portrait&quot;}}">
+class Component extends DCLogic {
+  wireContact() {
+    const ov = document.querySelector("[data-contact]");
+    const link = document.querySelector("[data-contact-open]");
+    if (!ov || !link) return;
+    const rise = ov.querySelector("[data-crise]");
+    const lines = Array.from(ov.querySelectorAll("[data-cline]"));
+    const open = () => {
+      ov.style.display = "block";
+      void ov.offsetWidth;
+      ov.style.opacity = "1";
+      if (rise) { rise.style.animation = "none"; void rise.offsetWidth; rise.style.animation = "axCRise 1s cubic-bezier(.16,.9,.2,1) both"; }
+      lines.forEach((el, i) => {
+        el.style.animation = "none"; void el.offsetWidth;
+        el.style.animation = "axCLine .8s " + (0.18 + i * 0.07).toFixed(2) + "s cubic-bezier(.2,.7,.2,1) both";
+      });
+      this._cOpen = true;
+    };
+    const close = () => {
+      ov.style.opacity = "0";
+      this._cOpen = false;
+      setTimeout(() => { if (!this._cOpen) ov.style.display = "none"; }, 560);
+    };
+    link.addEventListener("click", e => { e.preventDefault(); this._cOpen ? close() : open(); });
+    ov.addEventListener("click", e => { if (e.target === ov || e.target === ov.firstElementChild) close(); });
+    window.addEventListener("keydown", e => { if (e.key === "Escape" && this._cOpen) close(); });
+  }
+
+  wireUnderline() {
+    const nav = document.querySelector("[data-nav-bar]");
+    if (!nav) return;
+    const links = Array.from(nav.querySelectorAll("a"));
+    const bar = nav.querySelector("[data-underline]");
+    if (!links.length || !bar) return;
+    const home = links.find(a => a.hasAttribute("data-active")) || null;
+    const move = (el, instant) => {
+      bar.style.transition = instant ? "none" : "transform .42s cubic-bezier(.2,.7,.2,1), width .42s cubic-bezier(.2,.7,.2,1), opacity .25s linear";
+      if (!el) { bar.style.opacity = "0"; return; }
+      const nr = nav.getBoundingClientRect(), r = el.getBoundingClientRect();
+      bar.style.opacity = "1";
+      bar.style.width = Math.round(r.width) + "px";
+      bar.style.transform = "translateX(" + Math.round(r.left - nr.left) + "px)";
+    };
+    links.forEach(a => {
+      a.addEventListener("pointerenter", () => move(a));
+      a.addEventListener("focus", () => move(a));
+    });
+    nav.addEventListener("pointerleave", () => move(home));
+    requestAnimationFrame(() => move(home, true));
+    window.addEventListener("resize", () => move(home, true));
+  }
+
+  componentDidMount() {
+    this.wireContact();
+    setTimeout(() => this.wireUnderline(), 0);
+    this.apply();
+  }
+
+  componentDidUpdate() { this.apply(); }
+
+  apply() {
+    const map = { "3:4": "3/4", "4:5": "4/5", "1:1": "1/1", "16:10": "16/10" };
+    const im = document.querySelector("[data-portrait-img]");
+    if (im) {
+      im.style.aspectRatio = map[this.props.portraitRatio ?? "3:4"] || "3/4";
+    }
+    const p = document.querySelector("[data-portrait]");
+    const tilt = this.props.portraitTilt ?? 0;
+    if (p) p.style.transform = "rotate(" + tilt + "deg)";
+  }
+}
+</script>
+</body>
+</html>
