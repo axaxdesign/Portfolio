@@ -733,9 +733,9 @@ class Component extends DCLogic {
       if (Math.abs(dx) > Math.abs(dy)) {
         if (this.progT >= HERO_SPAN - 0.001) {   // left/right only drives the fan once it's actually on screen
           const hspan = (this.stage.clientWidth || window.innerWidth) * 0.6;   // one card per swipe-across-ish
-          this.spin = (this.spin || 0) + dx / hspan;
+          this.spin = (this.spin || 0) - dx / hspan;
           const cap = 0.34;
-          this.spinVel = Math.max(-cap, Math.min(cap, (this.spinVel || 0) + dx * 0.0016));
+          this.spinVel = Math.max(-cap, Math.min(cap, (this.spinVel || 0) - dx * 0.0016));
           if (!this.introDone) this.skipIntro = true;
           this.lastInput = performance.now();
         }
