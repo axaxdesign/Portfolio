@@ -179,7 +179,7 @@ class Component extends DCLogic {
       goWork: e => {
         if (e && e.preventDefault) e.preventDefault();
         this.skipIntro = true;
-        this.progT = Math.max(this.progT, HERO_SPAN + 0.001);
+        this.progT = HERO_SPAN;
         this.lastInput = performance.now();
       },
       goHomeMenu: e => {
@@ -339,6 +339,7 @@ class Component extends DCLogic {
     if (this.onWheel) window.removeEventListener("wheel", this.onWheel);
     if (this.onTouchStart) window.removeEventListener("touchstart", this.onTouchStart);
     if (this.onTouchMove) window.removeEventListener("touchmove", this.onTouchMove);
+    if (this.onTouchEnd) { window.removeEventListener("touchend", this.onTouchEnd); window.removeEventListener("touchcancel", this.onTouchEnd); }
     if (this.onMove) window.removeEventListener("pointermove", this.onMove);
     if (this.onResize) window.removeEventListener("resize", this.onResize);
     if (this.onKey) window.removeEventListener("keydown", this.onKey);
@@ -700,16 +701,20 @@ class Component extends DCLogic {
     let delta = k - (((this.off % n) + n) % n);
     if (delta > n / 2) delta -= n;
     if (delta < -n / 2) delta += n;
-    this.progT = Math.max(HERO_SPAN, this.progT + delta);
+    this.spin = (this.spin || 0) + delta;   // card selection only ever spins the fan, never the hero/fan crossfade
+    this.progT = HERO_SPAN;
     this.lastInput = performance.now();
     if (k !== this.state.active) this.setState({ active: k });
   }
 
   bind() {
+    const SWIPE_THRESHOLD = 0.16;   // fraction of HERO_SPAN a vertical swipe must cross to commit
     const advance = dy => {
       const span = (this.stage.clientHeight || window.innerHeight) * 0.85; // one card per screen-ish
       if (!this.introDone) this.skipIntro = true;         // scrolling cuts the landing sequence short
-      this.progT = Math.max(0, this.progT + dy / span);   // endless: the fan keeps looping
+      // hero <-> fan <-> "see all work": the fan itself no longer moves on vertical input, but progT can
+      // overshoot HERO_SPAN a little so a swipe-end past it can be told apart from one that falls short
+      this.progT = Math.max(0, Math.min(HERO_SPAN * 1.5, this.progT + dy / span));
       this.lastInput = performance.now();
     };
     this.onWheel = e => {
@@ -717,25 +722,52 @@ class Component extends DCLogic {
       advance(e.deltaY);
       if (e.cancelable) e.preventDefault();
     };
-    this.onTouchStart = e => { this.ty0 = e.touches[0].clientY; this.tx0 = e.touches[0].clientX; };
+    this.onTouchStart = e => {
+      this.ty0 = e.touches[0].clientY; this.tx0 = e.touches[0].clientX;
+      this._gestureStartProgT = this.progT;
+    };
     this.onTouchMove = e => {
       if (this.state.menu || this.ty0 == null) return;
       const y = e.touches[0].clientY, x = e.touches[0].clientX;
       const dy = this.ty0 - y, dx = x - (this.tx0 ?? x);
       if (Math.abs(dx) > Math.abs(dy)) {
-        const cap = 0.34;
-        this.spinVel = Math.max(-cap, Math.min(cap, (this.spinVel || 0) + dx * 0.0016));
-        if (!this.introDone) this.skipIntro = true;
-        this.lastInput = performance.now();
+        if (this.progT >= HERO_SPAN - 0.001) {   // left/right only drives the fan once it's actually on screen
+          const hspan = (this.stage.clientWidth || window.innerWidth) * 0.6;   // one card per swipe-across-ish
+          this.spin = (this.spin || 0) + dx / hspan;
+          const cap = 0.34;
+          this.spinVel = Math.max(-cap, Math.min(cap, (this.spinVel || 0) + dx * 0.0016));
+          if (!this.introDone) this.skipIntro = true;
+          this.lastInput = performance.now();
+        }
       } else {
         advance(dy * 1.6);
       }
       this.ty0 = y; this.tx0 = x;
       if (e.cancelable) e.preventDefault();
     };
+    this.onTouchEnd = () => {
+      if (this.state.menu || this._gestureStartProgT == null) return;
+      const start = this._gestureStartProgT;
+      const delta = this.progT - start;
+      if (start < HERO_SPAN - 0.001) {
+        // was in the hero: one clean swipe past the threshold swings all the way into the fan
+        this.progT = delta > HERO_SPAN * SWIPE_THRESHOLD ? HERO_SPAN : start;
+      } else if (delta < -HERO_SPAN * SWIPE_THRESHOLD) {
+        this.progT = 0;   // swiped down out of the fan: back to the hero
+      } else if (delta > HERO_SPAN * SWIPE_THRESHOLD) {
+        location.href = "work-mobile.html";   // swiped up past the fan: see the full work list
+        return;
+      } else {
+        this.progT = HERO_SPAN;   // too small a nudge: settle back into the fan
+      }
+      this._gestureStartProgT = null;
+      this.lastInput = performance.now();
+    };
     window.addEventListener("wheel", this.onWheel, { passive: false });
     window.addEventListener("touchstart", this.onTouchStart, { passive: true });
     window.addEventListener("touchmove", this.onTouchMove, { passive: false });
+    window.addEventListener("touchend", this.onTouchEnd, { passive: true });
+    window.addEventListener("touchcancel", this.onTouchEnd, { passive: true });
     this.advance = advance;
     this.onMove = e => {
       this.tx = (e.clientX / window.innerWidth - .5) * 2;
@@ -796,7 +828,7 @@ class Component extends DCLogic {
       this.spin += 0.0012;   // slow self-rotation while idle, hero included
     }
     this.prog += (this.progT - this.prog) * 0.09;
-    this.off = Math.max(0, this.prog - HERO_SPAN) + this.spin;
+    this.off = this.spin;   // the fan only ever turns on horizontal input now
     this.mx += (this.tx - this.mx) * 0.16;   // the face tracks the cursor closely
     this.my += (this.ty - this.my) * 0.16;
 
