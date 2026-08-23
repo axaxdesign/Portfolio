@@ -249,7 +249,7 @@ class Component extends DCLogic {
     window.addEventListener("resize", this.onFrame);
     setTimeout(() => this.wireContact(), 60);
     this.prog = 0; this.progT = 0;
-    this.off = 0; this.spin = 0;
+    this.off = 0; this.spin = 0; this.fanVel = 0;
     this.mx = 0; this.my = 0; this.tx = 0; this.ty = 0;
     const wait = () => {
       if (!this.mounted) return;
@@ -725,6 +725,8 @@ class Component extends DCLogic {
     this.onTouchStart = e => {
       this.ty0 = e.touches[0].clientY; this.tx0 = e.touches[0].clientX;
       this._gestureStartProgT = this.progT;
+      this._fanTrack = null;
+      this.fanVel = 0;   // grabbing the fan kills any momentum still gliding from a previous swipe
     };
     this.onTouchMove = e => {
       if (this.state.menu || this.ty0 == null) return;
@@ -736,8 +738,13 @@ class Component extends DCLogic {
           this.spin = (this.spin || 0) - dx / hspan;
           const cap = 0.34;
           this.spinVel = Math.max(-cap, Math.min(cap, (this.spinVel || 0) - dx * 0.0016));
+          // rolling window of recent samples, used to read off release speed for fan momentum
+          const trk = this._fanTrack || (this._fanTrack = []);
+          const now = performance.now();
+          trk.push({ t: now, x });
+          while (trk.length > 2 && now - trk[0].t > 100) trk.shift();
           if (!this.introDone) this.skipIntro = true;
-          this.lastInput = performance.now();
+          this.lastInput = now;
         }
       } else {
         advance(dy * 1.6);
@@ -747,6 +754,18 @@ class Component extends DCLogic {
     };
     this.onTouchEnd = () => {
       if (this.state.menu || this._gestureStartProgT == null) return;
+      const trk = this._fanTrack;
+      if (trk && trk.length > 1) {   // hand the swipe's release speed off as fan momentum
+        const first = trk[0], last = trk[trk.length - 1];
+        const dtw = last.t - first.t;
+        if (dtw > 0) {
+          const hspan = (this.stage.clientWidth || window.innerWidth) * 0.6;
+          const velPerFrame = -((last.x - first.x) / hspan) / dtw * 16.7;
+          const cap = 0.09;
+          this.fanVel = Math.max(-cap, Math.min(cap, velPerFrame));
+        }
+      }
+      this._fanTrack = null;
       const start = this._gestureStartProgT;
       const delta = this.progT - start;
       if (start < HERO_SPAN - 0.001) {
@@ -826,6 +845,11 @@ class Component extends DCLogic {
     if (this.state.menu) return;   // the mark and fan sit fully behind the opaque nav overlay, so skip the heavy per-frame work while it's open
     if (this.hoverIdx < 0 && performance.now() - (this.lastInput || 0) > 1400) {
       this.spin += 0.0012;   // slow self-rotation while idle, hero included
+    }
+    if (this.fanVel) {   // the fan keeps turning after a swipe, easing to a stop rather than snapping still
+      this.spin += this.fanVel;
+      this.fanVel *= 0.94;
+      if (Math.abs(this.fanVel) < 0.0004) this.fanVel = 0;
     }
     this.prog += (this.progT - this.prog) * 0.09;
     this.off = this.spin;   // the fan only ever turns on horizontal input now
