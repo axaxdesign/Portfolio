@@ -413,6 +413,10 @@ class Component extends DCLogic {
       this.moved = 0;
       this.input = 0;
       this.vel = 0;
+      // setPointerCapture below re-targets the click that would normally follow this
+      // pointerdown to `stage` itself, so the featured card's <a> never sees it - navigate
+      // explicitly instead of relying on that click reaching the link
+      this.downOnLink = !!(e.target.closest && e.target.closest("[data-cimglink]"));
       stage.setPointerCapture(e.pointerId);
     });
     stage.addEventListener("pointermove", e => {
@@ -427,7 +431,10 @@ class Component extends DCLogic {
     const end = () => {
       if (this.drag === null) return;
       this.drag = null;
-      if (this.moved < 6) this.vel = 0;
+      if (this.moved < 6) {
+        this.vel = 0;
+        if (this.downOnLink && this.cImgLink && this.cImgLink.href) location.href = this.cImgLink.href;
+      }
     };
     stage.addEventListener("pointerup", end);
     stage.addEventListener("pointercancel", () => { this.drag = null; });
